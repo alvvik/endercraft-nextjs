@@ -24,8 +24,8 @@ const policies: PolicyProps[] = [
   },
   {
     id: "terms",
-    name: "Regulamin płatności sklepu UnitedCraft Premium",
-    link: "/regulamin-sklepu",
+    name: "Regulamin płatności sklepu",
+    link: "/regulamin",
   },
 ];
 interface ItemProps {
@@ -104,7 +104,7 @@ const itemShop: ItemProps[] = [
 ];
 export default function Shop() {
   return (
-    <section className="rounded-t-4xl m-2 bg-surface/90 p-6 -inset-8">
+    <section className="rounded-4xl m-2 bg-surface/90 p-6 ">
       <div className="flex flex-col gap-4 mb-4">
         <div>
           <h2 className="text-fluid-h2 font-bold text-main">Sklep</h2>
