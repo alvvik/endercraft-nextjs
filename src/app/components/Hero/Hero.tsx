@@ -1,4 +1,5 @@
 import CopyIp from "./CopyIp";
+import OnlinePlayers from "./OnlinePlayers";
 
 export default function Hero() {
   return (
@@ -14,7 +15,8 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 flex flex-col  items-center justify-center sm:flex-row gap-4 ">
+        <OnlinePlayers />
         <CopyIp />
       </div>
     </main>

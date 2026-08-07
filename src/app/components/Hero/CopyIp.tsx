@@ -20,7 +20,7 @@ export default function CopyIp() {
     <button
       type="button"
       onClick={handleCopy}
-      className="rounded-lg bg-main px-4 py-2 font-mono text-sm font-semibold  transition hover:bg-main-hover active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-500"
+      className="rounded-lg bg-main px-4 py-2 text-fluid-subtle font-semibold  transition hover:bg-main-hover active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-500"
     >
       {copied ? "Skopiowano IP! " : "Skopiuj IP: " + ip}
     </button>
