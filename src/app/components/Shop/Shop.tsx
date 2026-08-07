@@ -104,7 +104,7 @@ const itemShop: ItemProps[] = [
 ];
 export default function Shop() {
   return (
-    <section className="rounded-4xl m-2 bg-surface/90 p-6 ">
+    <section className="rounded-4xl m-2 bg-surface/90 p-6 " id="sklep">
       <div className="flex flex-col gap-4 mb-4">
         <div>
           <h2 className="text-fluid-h2 font-bold text-main">Sklep</h2>
