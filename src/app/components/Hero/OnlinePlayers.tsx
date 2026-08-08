@@ -30,14 +30,12 @@ const getMinecraftStatus = unstable_cache(
 );
 
 export default async function ServerStatusPage() {
-  const SERVER_IP = config.serverIP;
-  const SERVER_PORT = config.serverPort;
-  const data = await getMinecraftStatus(SERVER_IP, SERVER_PORT);
+  const data = await getMinecraftStatus(config.serverIP, config.serverPort);
 
   return (
     <div>
       <Link
-        href={`https://discord.endercraft.pl`}
+        href={config.discordInvite}
         className="rounded-lg bg-main px-4 py-2 text-fluid-subtle font-semibold transition hover:bg-main-hover active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-500"
       >
         {data.online

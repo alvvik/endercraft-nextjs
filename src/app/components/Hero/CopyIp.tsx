@@ -1,21 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function CopyIp() {
   const ip = "entercraft.pl";
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(ip);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Błąd podczas kopiowania:", err);
-    }
-  };
+const handleCopy = async () => {
+  try {
+    await navigator.clipboard.writeText(ip);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  } catch (err) {
+    console.error("Błąd podczas kopiowania:", err);
+  }
+};
 
+useEffect(() => {
+  let timeoutId: NodeJS.Timeout;
+  if (copied) {
+    timeoutId = setTimeout(() => setCopied(false), 2000);
+  }
+  return () => {
+    if (timeoutId) clearTimeout(timeoutId);
+  };
+}, [copied]);
   return (
     <button
       type="button"
