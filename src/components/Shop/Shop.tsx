@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Import, Info } from "lucide-react";
 import { products } from "@/data/products";
-import BuyButton from "./BuyButton";
+
 import Link from "next/link";
 interface PolicyProps {
   id: string;

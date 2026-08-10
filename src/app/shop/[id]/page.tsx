@@ -6,16 +6,18 @@ import Link from "next/link";
 import { products } from "@/data/products";
 import { useParams } from "next/navigation";
 import { ChevronLeft, Info } from "lucide-react";
-
+import { useTransition } from "react";
+import { createCheckoutSession } from "@/app/actions/stripe";
 export default function ProductPage() {
   const params = useParams();
   const productId = params.id as string;
-  const [mcNickname, setMcNickname] = useState("");
+  const [mcNickname, setMcNickname] = useState<string>("");
 
   // Find selected product
   const selectedProduct = useMemo(() => {
     return products.find((p) => p.id === productId);
   }, [productId]);
+  const [isPending, startTransition] = useTransition();
 
   if (!selectedProduct) {
     return (
@@ -101,13 +103,18 @@ export default function ProductPage() {
                   className="w-full px-4 py-3  ring ring-border rounded-xl text-text placeholder-text-muted focus:ring-main focus:outline-none transition-colors "
                 />
                 <p className="text-text-muted text-fluid-subtle">
-                  Produkt zostanie przydzielony na tego nicka
+                  Produkt zostanie przydzielony na tego nicku
                 </p>
               </div>
 
               <button
+                onClick={() =>
+                  startTransition(() =>
+                    createCheckoutSession(selectedProduct.id, mcNickname),
+                  )
+                }
                 disabled={!mcNickname}
-                className="w-full py-3 px-4 bg-main text-text-secondary font-semibold rounded-xl hover:bg-main-hover disabled:bg-text-muted disabled:cursor-not-allowed disabled:text-white transition-colors text-fluid-body"
+                className="w-full rounded-xl bg-main px-4 py-3 font-semibold text-text-secondary transition hover:bg-main-hover disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {mcNickname
                   ? "Przejdź do płatności"
