@@ -1,0 +1,15 @@
+<svg
+        width="36"
+        height="36"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="transition-transform duration-300 group-hover:scale-110"
+      >
+     
+        <path d="M12 2L21 7V12L12 7L3 12V7L12 2Z" fill="#003049" />
+  
+        <path d="M3 12L12 17V22L3 17V12Z" fill="#003049" />
+  
+        <path d="M12 17L21 12V17L12 22V17Z" fill="#003049" />
+      </svg>
