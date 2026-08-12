@@ -29,6 +29,7 @@ export default function CopyIp() {
     <button
       type="button"
       onClick={handleCopy}
+      aria-label={copied ? "IP skopiowane do schowka" : "Skopiuj IP serwera"}
       className="rounded-lg bg-main px-4 py-2 text-fluid-subtle font-semibold  transition hover:bg-main-hover active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-500"
     >
       {copied ? "Skopiowano IP! " : "Skopiuj IP: " + config.serverIP}

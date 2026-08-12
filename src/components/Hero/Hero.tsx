@@ -1,7 +1,7 @@
 import Image from "next/image";
 import CopyIp from "./CopyIp";
 import OnlinePlayers from "./OnlinePlayers";
-
+import { config } from "@/config";
 export default function Hero() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-text-secondary">
@@ -16,7 +16,7 @@ export default function Hero() {
 
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-fluid-hero font-bold text-inherit">
-          EnterCraft.pl
+          EnderCraft.pl
         </h1>
         <p className="text-fluid-subtitle font-medium">
           Twój ulubiony serwer minecraft!
