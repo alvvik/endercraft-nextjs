@@ -9,8 +9,8 @@ export default function Footer() {
       </div>
       <div>
         <p className="text-fluid-subtle text-text-muted text-center">
-          "Minecraft" is a trademark of Mojang. This site is not affiliated with
-          Mojang or Microsoft.
+          &quot;Minecraft&quot; is a trademark of Mojang. This site is not
+          affiliated with Mojang or Microsoft.
         </p>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Import, Info } from "lucide-react";
+import { Info } from "lucide-react";
 import { products } from "@/data/products";
 
 import Link from "next/link";

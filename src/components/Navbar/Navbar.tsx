@@ -34,7 +34,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:text-main transition text-text-secondary"
+                className=" transition text-text-secondary"
               >
                 {link.name}
               </Link>

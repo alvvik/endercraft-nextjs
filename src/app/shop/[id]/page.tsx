@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { useParams } from "next/navigation";
-import { ChevronLeft, Info } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { useTransition } from "react";
 import { createCheckoutSession } from "@/app/actions/stripe";
+
 export default function ProductPage() {
   const params = useParams();
   const productId = params.id as string;
@@ -58,7 +59,7 @@ export default function ProductPage() {
         <div className="rounded-4xl ring ring-border bg-surface/90 p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="flex flex-col gap-4">
-              <div className="relative w-full aspect-square bg-gray-200 rounded-2xl overflow-hidden ring ring-border">
+              <div className="relative w-full aspect-square bg-main rounded-2xl overflow-hidden ring ring-border">
                 <Image
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
@@ -100,6 +101,8 @@ export default function ProductPage() {
                   onChange={(e) => setMcNickname(e.target.value.trim())}
                   placeholder="Twój nick"
                   maxLength={16}
+                  minLength={3}
+                  pattern="[a-zA-Z0-9_]{3,16}"
                   className="w-full px-4 py-3  ring ring-border rounded-xl text-text placeholder-text-muted focus:ring-main focus:outline-none transition-colors "
                 />
                 <p className="text-text-muted text-fluid-subtle">
