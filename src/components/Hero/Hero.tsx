@@ -1,7 +1,7 @@
 import Image from "next/image";
 import CopyIp from "./CopyIp";
 import OnlinePlayers from "./OnlinePlayers";
-import { config } from "@/config";
+
 export default function Hero() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-text-secondary">

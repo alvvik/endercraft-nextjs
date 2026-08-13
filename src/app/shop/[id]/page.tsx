@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { useParams } from "next/navigation";
-import { ChevronLeft, Info } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { useTransition } from "react";
 import { createCheckoutSession } from "@/app/actions/stripe";
 
