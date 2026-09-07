@@ -12,10 +12,10 @@ function PDFContent() {
   return (
     <div className="w-full h-96 md:h-screen ">
       <iframe
-        src="/regulamin.pdf"
+        src="/policy.pdf"
         className="w-full h-full rounded-2xl "
-        title="Regulamin serwera"
-        aria-label="Dokument regulaminu serwera"
+        title="Polityka prywatnosci"
+        aria-label="Dokument polityki prywatnosci"
         allow="fullscreen"
       />
     </div>
@@ -26,7 +26,7 @@ export default function Page() {
   return (
     <main className="flex flex-col items-center justify-center  px-4 py-4 md:py-8 ">
       <h1 className="text-fluid-h1 font-bold mb-4 md:mb-8 text-center ">
-        Regulamin serwera
+        Polityka prywatnosci
       </h1>
 
       <Suspense
@@ -39,7 +39,7 @@ export default function Page() {
         <p>
           Jeśli dokument się nie załaduje,{" "}
           <a
-            href="/regulamin.pdf"
+            href="/policy.pdf"
             download
             className="text-blue-500 hover:text-blue-900 underline font-semibold"
           >

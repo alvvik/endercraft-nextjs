@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { Info } from "lucide-react";
 import { products } from "@/data/products";
-
-import Link from "next/link";
+import ProductCard from "./ProductCard";
 interface PolicyProps {
   id: string;
   name: string;
@@ -63,41 +61,8 @@ export default function Shop() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((item) => (
-          <article
-            key={item.id}
-            className="group overflow-hidden rounded-2xl ring ring-border transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            <div className="relative aspect-square ">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="object-cover transition duration-300 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
-              />
-            </div>
-
-            <div className="p-4">
-              <div>
-                <h3 className="text-fluid-h4 font-semibold text-text">
-                  {item.name}
-                </h3>
-                <p className="text-fluid-subtle my-2 text-text-muted">
-                  {item.price.toFixed(2)} zł
-                </p>
-              </div>
-
-              <div className="flex justify-center ">
-                <Link
-                  href={`/shop/${item.id}`}
-                  className=" rounded-xl bg-main px-4 py-3 font-semibold text-text-secondary transition hover:bg-main-hover "
-                >
-                  Zobacz szczegóły
-                </Link>
-              </div>
-            </div>
-          </article>
+        {products.map((item, index) => (
+          <ProductCard key={item.id} item={item} index={index} />
         ))}
       </div>
     </section>
